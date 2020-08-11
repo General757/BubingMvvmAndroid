@@ -1,0 +1,20 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bubing.mvvm">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application>
+        <activity
+            android:name=".base.ContainerActivity"
+            android:configChanges="orientation|keyboardHidden" />
+
+        <activity
+            android:name=".crash.DefaultErrorActivity"
+            android:process=":activity_crash_error" />
+
+        <provider
+            android:name=".crash.CrashInitProvider"
+            android:authorities="${applicationId}.customactivityoncrashinitprovider"
+            android:exported="false"
+            android:initOrder="101" />
+    </application>
+</manifest>
